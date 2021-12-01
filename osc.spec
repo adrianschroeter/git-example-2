@@ -41,10 +41,6 @@ Summary:        Open Build Service Commander
 License:        GPL-2.0-or-later
 Group:          Development/Tools/Other
 URL:            https://github.com/openSUSE/osc
-Source:         %{name}-%{version}.tar.gz
-Source1:        debian.dirs
-Source2:        debian.docs
-Source3:        debian.osc.links
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildRequires:  %{use_python}-devel
 BuildRequires:  %{use_python}-setuptools
@@ -147,7 +143,7 @@ http://en.opensuse.org/openSUSE:Build_Service_Tutorial for a general
 introduction.
 
 %prep
-%setup -q -D -T 0 -n .
+%setup -q -D -T 0 -n %_sourcedir
 
 %build
 # the PATH hack/rewrite is needed for Fedora 20 builds, because /bin
